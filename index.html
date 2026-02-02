@@ -9,8 +9,28 @@
 
 <style>
 /* Navbar */
-.navbar-brand { display: flex; align-items: center; gap: 10px; font-weight: bold; color: #1f3c88; }
+.navbar-brand { 
+  display: flex; 
+  align-items: center; 
+  gap: 10px; 
+  font-weight: bold; 
+  color: #1f3c88; 
+}
 .navbar-brand img { height: 45px; }
+
+/* Slim dropdown menu — ADD THIS */
+.dropdown-menu {
+  width: max-content;
+  min-width: unset;
+  padding: 6px 0;
+  border-radius: 10px;
+}
+
+.dropdown-item {
+  padding: 6px 16px;
+  white-space: nowrap;
+}
+
 
 /* Hero */
 .hero { min-height: 90vh; background: linear-gradient(135deg, #1f3c88, #2f6bd6); color: white; display: flex; align-items: center; text-align: center; overflow: hidden; }
@@ -52,6 +72,24 @@
     z-index: 1000;
 }
 .whatsapp-float:hover { background: #1ebd5a; }
+
+/* Medical Gallery Images */
+.gallery-img { width: 100%; height: 200px; object-fit: cover; border-radius: 8px; }
+
+/* Optional: smooth scroll snap */
+.gallery-scroll {
+  display: flex;
+  overflow-x: auto;
+  gap: 1rem;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 1rem;
+}
+.gallery-scroll .card {
+  scroll-snap-align: start;
+  flex-shrink: 0;
+  width: 250px;
+}
 </style>
 </head>
 
@@ -60,7 +98,7 @@
 <!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg bg-white shadow-sm fixed-top">
 <div class="container">
-<a class="navbar-brand" href="#home"><img src="logo.png" alt="Shiprat Logo"> SHIPRAT ENTERPRISES</a>
+<a class="navbar-brand" href="#home"><img src="images/logo.png" alt="Shiprat Logo"> SHIPRAT ENTERPRISES</a>
 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
 <span class="navbar-toggler-icon"></span>
 </button>
@@ -85,24 +123,70 @@
 </div>
 </section>
 
-<!-- MEDICAL FIRST -->
-    <section class="py-5 reveal" id="services">
-<div class="container text-center">
-<h2 class="mb-5">Our Services</h2>
-<div class="row g-4">
-    
+<!-- MEDICAL SECTION -->
 <section id="medical" class="py-5 bg-white reveal">
 <div class="container text-center">
 <h2 class="mb-4">Medical Equipment Supply</h2>
 <p class="mb-5">Supplying clinics, hospitals, and labs with trusted medical equipment.</p>
 
-<div class="row g-4">
-<div class="col-md-3"><div class="card service-card reveal"><div class="service-icon">🩺</div><h5>Diagnostic Equipment</h5><p>BP machines, ECGs, thermometers.</p></div></div>
-<div class="col-md-3"><div class="card service-card reveal"><div class="service-icon">🧪</div><h5>Laboratory Equipment</h5><p>Microscopes, centrifuges, test kits.</p></div></div>
-<div class="col-md-3"><div class="card service-card reveal"><div class="service-icon">🏥</div><h5>Hospital Furniture & PPE</h5><p>Beds, couches, PPE supplies.</p></div></div>
-<div class="col-md-3"><div class="card service-card reveal"><div class="service-icon">🩻</div><h5>Imaging Equipment</h5><p>CT Scan, X-ray, MRI, Ultrasound machines.</p></div></div>
+<!-- Medical Service Cards (vertical grid) -->
+<div class="row g-4 mb-5">
+<div class="col-md-3">
+  <div class="card service-card reveal">
+    <div class="service-icon text-center">🩺</div>
+    <h5 class="text-center">Diagnostic Equipment</h5>
+    <p class="text-center">BP machines, ECGs, thermometers.</p>
+  </div>
+</div>
+<div class="col-md-3">
+  <div class="card service-card reveal">
+    <div class="service-icon text-center">🧪</div>
+    <h5 class="text-center">Laboratory Equipment</h5>
+    <p class="text-center">Microscopes, centrifuges, test kits.</p>
+  </div>
+</div>
+<div class="col-md-3">
+  <div class="card service-card reveal">
+    <div class="service-icon text-center">🏥</div>
+    <h5 class="text-center">Hospital Furniture & PPE</h5>
+    <p class="text-center">Beds, couches, PPE supplies.</p>
+  </div>
+</div>
+<div class="col-md-3">
+  <div class="card service-card reveal">
+    <div class="service-icon text-center">🩻</div>
+    <h5 class="text-center">Imaging Equipment</h5>
+    <p class="text-center">CT Scan, X-ray, MRI, Ultrasound machines.</p>
+  </div>
+</div>
 </div>
 
+<!-- Medical Image Gallery (horizontal scroll for 20 images) -->
+<div class="gallery-scroll mb-5">
+<!-- You can replace src/alt manually -->
+<div class="card"><img src="images/mri.png" alt="mri" class="gallery-img"></div>
+<div class="card"><img src="images/mri1.png" alt="mri" class="gallery-img"></div>
+<div class="card"><img src="images/xray.png" alt="xray" class="gallery-img"></div>
+<div class="card"><img src="images/x-ray.png" alt="x-ray" class="gallery-img"></div>
+<div class="card"><img src="images/ultrasound.png" alt="ecg" class="gallery-img"></div>
+<div class="card"><img src="images/microscope.webp" alt="mscope" class="gallery-img"></div>
+<div class="card"><img src="images/lab1.png" alt="lab" class="gallery-img"></div>
+<div class="card"><img src="images/cent1.png" alt="lab" class="gallery-img"></div>
+<div class="card"><img src="images/lab.png" alt="lab" class="gallery-img"></div>
+<div class="card"><img src="images/cent.png" alt="lab" class="gallery-img"></div>
+<div class="card"><img src="images/bp.png" alt="bp" class="gallery-img"></div>
+<div class="card"><img src="images/delivery1.png" alt="bed" class="gallery-img"></div>
+<div class="card"><img src="images/bed.png" alt="Image 13" class="gallery-img"></div>
+<div class="card"><img src="images/wheelchair.png" alt="Image 14" class="gallery-img"></div>
+<div class="card"><img src="images/wheelchair1.png" alt="Image 15" class="gallery-img"></div>
+<div class="card"><img src="images/bedside3.png" alt="Image 16" class="gallery-img"></div>
+<div class="card"><img src="images/bedside1.png" alt="Image 17" class="gallery-img"></div>
+<div class="card"><img src="images/bedside.png" alt="Image 18" class="gallery-img"></div>
+<div class="card"><img src="images/deliverybed.png" alt="Image 19" class="gallery-img"></div>
+<div class="card"><img src="images/ecg.jpg" alt="Image 20" class="gallery-img"></div>
+</div>
+
+<!-- Request Quotation Button -->
 <div class="text-center mt-4">
 <a href="https://wa.me/254758964343?text=Hello%20Shiprat%20Enterprises,%20I%20would%20like%20to%20request%20a%20quotation%20for%20medical%20equipment"
    class="btn btn-primary btn-lg">Request a Quotation</a>
@@ -110,41 +194,36 @@
 </div>
 </section>
 
-<!-- SERVICES INCLUDING ICT -->
+<!-- ICT and Technical Services remain untouched -->
 <section class="py-5 reveal" id="services">
 <div class="container text-center">
 <h2 class="mb-5">ICT and Technical Services</h2>
 <div class="row g-4">
 
-<!-- Web Design -->
 <div class="col-md-3"><div class="card service-card reveal">
 <div class="service-icon">💻</div>
 <h5>Web Design</h5>
 <p>Professional websites tailored to your business.</p>
 </div></div>
 
-<!-- Digital Marketing -->
 <div class="col-md-3"><div class="card service-card reveal">
 <div class="service-icon">📣</div>
 <h5>Digital Marketing</h5>
 <p>Grow your online presence effectively.</p>
 </div></div>
 
-<!-- ICT Accessories -->
 <div class="col-md-2"><div class="card service-card reveal">
 <div class="service-icon">💻</div>
 <h5>ICT Accessories</h5>
 <p>Laptops, printers, CCTV, routers.</p>
 </div></div>
 
-<!-- Networking -->
 <div class="col-md-2"><div class="card service-card reveal">
 <div class="service-icon">🌐</div>
 <h5>Networking</h5>
 <p>Secure wired & wireless setups.</p>
 </div></div>
 
-<!-- Software Support -->
 <div class="col-md-2"><div class="card service-card reveal">
 <div class="service-icon">🛠️</div>
 <h5>Software Support</h5>
@@ -155,6 +234,20 @@
 </div>
 </section>
 
+    <!-- ICT Image Gallery (horizontal scroll for 9 images) -->
+<div class="gallery-scroll mb-5">
+<!-- You can replace src/alt manually -->
+<div class="card"><img src="images/desktop.png" alt="desktop" class="gallery-img"></div>
+<div class="card"><img src="images/printer1.png" alt="printer" class="gallery-img"></div>
+<div class="card"><img src="images/printer.png" alt="printer" class="gallery-img"></div>
+<div class="card"><img src="images/router1.png" alt="ict" class="gallery-img"></div>
+<div class="card"><img src="images/router.png" alt="ict" class="gallery-img"></div>
+<div class="card"><img src="images/cctv3.png" alt="ict" class="gallery-img"></div>
+<div class="card"><img src="images/cctv2.png" alt="ict" class="gallery-img"></div>
+<div class="card"><img src="images/cctv1.png" alt="ict" class="gallery-img"></div>
+<div class="card"><img src="images/cctv.png" alt="ict" class="gallery-img"></div>
+</div>
+    
 <!-- ABOUT -->
 <section class="py-5 bg-light reveal" id="about">
 <div class="container text-center">
@@ -227,6 +320,23 @@ window.addEventListener("load", () => {
 window.addEventListener("scroll", revealElements);
 window.addEventListener("load", revealElements);
 </script>
+<script>
+window.addEventListener("scroll", () => {
 
+  document.querySelectorAll(".dropdown-menu.show").forEach(menu => {
+    const toggle = menu.previousElementSibling;
+    if (toggle) {
+      bootstrap.Dropdown.getInstance(toggle)?.hide();
+    }
+  });
+
+  const nav = document.querySelector(".navbar-collapse");
+  if (nav.classList.contains("show")) {
+    bootstrap.Collapse.getInstance(nav)?.hide();
+  }
+});
+</script>
+
+    
 </body>
 </html>
